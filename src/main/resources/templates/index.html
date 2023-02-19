@@ -2,35 +2,35 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>登录画面</title>
 </head>
 <body>
-<script type="text/javascript">
-function jsregist()
-{
-    alert("我的第一个 JavaScript 函数");
-}
+<form th:action="@{/login}" method="post" id="loginForm">
+    <label for="username">用户名：</label>
+    <input type="text" name="username" id="username" th:value="${form.setUsername}"><br/>
 
-</script>
-<h1> 这是我的springboot测试</h1>
-<button >天气</button>
-<button type="button" class="btn btn-default">默认按钮</button>
-<!-- 提供额外的视觉效果，标识一组按钮中的原始动作 -->
-<button type="button" class="btn btn-primary">原始按钮</button>
-<!-- 表示一个成功的或积极的动作 -->
-<button type="button" class="btn btn-success">成功按钮</button>
-<button type="button" class="btn btn-small btn-primary js-regist" onclick='jsregist()'>
-<i class="icon-edit icon-white"></i>
-登录按钮15</button>
-<tr>
-<p1> this is my first springboot project</p1>
-<a href="/userLogin">west world</a>
-<!-- <script type>
-	$(function(){
-		$('#js-regist').click(function(){
-			alert('Hello Campers')
-		})
-	})
-</script> -->
+    <label for="password">密 码：</label>
+    <input type="password" name="password" id="password" th:value="${form.setPassword}"><br/>
+    
+    <p>
+                <input type="email" name="email" class="form-control" placeholder="E-mail" required autofocus/>
+            </p>
+            <p>
+                <input type="password" name="password" class="form-control" placeholder="Password" required />
+            </p>
+            <p>
+                <input type="checkbox" name="remember-me" />&nbsp;Remember Me
+            </p>
+            <p>
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </p>
+    
+    
+    
+    
+
+    <button type="submit">登录</button>
+</form>
+
 </body>
 </html>
